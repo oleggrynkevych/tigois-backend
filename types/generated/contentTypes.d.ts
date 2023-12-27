@@ -788,6 +788,7 @@ export interface ApiExhibitExhibit extends Schema.CollectionType {
     >;
     Photo: Attribute.Media;
     Description: Attribute.Text;
+    Number: Attribute.Integer;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
