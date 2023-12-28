@@ -21,22 +21,67 @@
       "target": "api::gallery.gallery",
       "inversedBy": "exhibits"
     },
-    "Photo": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
+    "Description": {
+      "type": "text"
+    },
+    "Price": {
+      "type": "biginteger"
+    },
+    "hash": {
+      "type": "string"
+    },
+    "Army": {
+      "type": "biginteger"
+    },
+    "Width": {
+      "type": "biginteger"
+    },
+    "Height": {
+      "type": "biginteger",
+      "default": "0"
+    },
+    "Lenght": {
+      "type": "biginteger"
+    },
+    "Weight": {
+      "type": "biginteger"
+    },
+    "Years": {
+      "type": "string"
+    },
+    "Author": {
+      "type": "component",
+      "repeatable": true,
+      "component": "author.authors"
+    },
+    "Material": {
+      "displayName": "Material",
+      "type": "component",
+      "repeatable": true,
+      "component": "materials.material"
+    },
+    "VideoURL": {
+      "type": "string"
+    },
+    "VideoImage": {
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ]
+      ],
+      "type": "media",
+      "multiple": false
     },
-    "Description": {
-      "type": "text"
-    },
-    "Number": {
-      "type": "integer"
+    "Images": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
     }
   }
 }

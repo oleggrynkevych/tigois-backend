@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_author_authors_s",
+  "info": {
+    "displayName": "Authors ",
+    "icon": "user",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    }
+  }
+}

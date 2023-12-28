@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_materials_materials",
+  "info": {
+    "displayName": "Material",
+    "icon": "database",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    }
+  }
+}
