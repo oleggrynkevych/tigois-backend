@@ -33,6 +33,10 @@
       "relation": "oneToMany",
       "target": "api::exhibit.exhibit",
       "mappedBy": "gallery"
+    },
+    "InHeader": {
+      "type": "boolean",
+      "required": true
     }
   }
 }

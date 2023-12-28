@@ -839,6 +839,7 @@ export interface ApiGalleryGallery extends Schema.CollectionType {
       'oneToMany',
       'api::exhibit.exhibit'
     >;
+    InHeader: Attribute.Boolean & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
