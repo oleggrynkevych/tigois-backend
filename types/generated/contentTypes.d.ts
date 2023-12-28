@@ -362,95 +362,6 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiExhibitExhibit extends Schema.CollectionType {
-  collectionName: 'exhibits';
-  info: {
-    singularName: 'exhibit';
-    pluralName: 'exhibits';
-    displayName: 'Exhibit';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    Title: Attribute.String;
-    gallery: Attribute.Relation<
-      'api::exhibit.exhibit',
-      'manyToOne',
-      'api::gallery.gallery'
-    >;
-    Description: Attribute.Text;
-    Price: Attribute.BigInteger;
-    hash: Attribute.String;
-    Army: Attribute.BigInteger;
-    Width: Attribute.BigInteger;
-    Height: Attribute.BigInteger & Attribute.DefaultTo<'0'>;
-    Lenght: Attribute.BigInteger;
-    Weight: Attribute.BigInteger;
-    Years: Attribute.String;
-    Author: Attribute.Component<'author.authors', true>;
-    Material: Attribute.Component<'materials.material', true>;
-    VideoURL: Attribute.String;
-    VideoImage: Attribute.Media;
-    Images: Attribute.Media;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::exhibit.exhibit',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::exhibit.exhibit',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiGalleryGallery extends Schema.CollectionType {
-  collectionName: 'galleries';
-  info: {
-    singularName: 'gallery';
-    pluralName: 'galleries';
-    displayName: 'Gallery';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    Title: Attribute.String & Attribute.Required;
-    Description: Attribute.Text;
-    hash: Attribute.String & Attribute.Required;
-    Order: Attribute.Integer & Attribute.Required;
-    exhibits: Attribute.Relation<
-      'api::gallery.gallery',
-      'oneToMany',
-      'api::exhibit.exhibit'
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::gallery.gallery',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::gallery.gallery',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -857,6 +768,126 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiExhibitExhibit extends Schema.CollectionType {
+  collectionName: 'exhibits';
+  info: {
+    singularName: 'exhibit';
+    pluralName: 'exhibits';
+    displayName: 'Exhibit';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String;
+    gallery: Attribute.Relation<
+      'api::exhibit.exhibit',
+      'manyToOne',
+      'api::gallery.gallery'
+    >;
+    Description: Attribute.Text;
+    Price: Attribute.BigInteger;
+    hash: Attribute.String;
+    Army: Attribute.BigInteger;
+    Width: Attribute.BigInteger;
+    Height: Attribute.BigInteger & Attribute.DefaultTo<'0'>;
+    Lenght: Attribute.BigInteger;
+    Weight: Attribute.BigInteger;
+    Years: Attribute.String;
+    Author: Attribute.Component<'author.authors', true>;
+    Material: Attribute.Component<'materials.material', true>;
+    VideoURL: Attribute.String;
+    VideoImage: Attribute.Media;
+    Images: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::exhibit.exhibit',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::exhibit.exhibit',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiGalleryGallery extends Schema.CollectionType {
+  collectionName: 'galleries';
+  info: {
+    singularName: 'gallery';
+    pluralName: 'galleries';
+    displayName: 'Gallery';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String & Attribute.Required;
+    Description: Attribute.Text;
+    hash: Attribute.String & Attribute.Required;
+    Order: Attribute.Integer & Attribute.Required;
+    exhibits: Attribute.Relation<
+      'api::gallery.gallery',
+      'oneToMany',
+      'api::exhibit.exhibit'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::gallery.gallery',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::gallery.gallery',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiWelcomeVideoWelcomeVideo extends Schema.SingleType {
+  collectionName: 'welcome_videos';
+  info: {
+    singularName: 'welcome-video';
+    pluralName: 'welcome-videos';
+    displayName: 'WelcomeVideo';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    VideoLarge: Attribute.String;
+    VideoSmall: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::welcome-video.welcome-video',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::welcome-video.welcome-video',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -867,8 +898,6 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::exhibit.exhibit': ApiExhibitExhibit;
-      'api::gallery.gallery': ApiGalleryGallery;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
@@ -877,6 +906,9 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::exhibit.exhibit': ApiExhibitExhibit;
+      'api::gallery.gallery': ApiGalleryGallery;
+      'api::welcome-video.welcome-video': ApiWelcomeVideoWelcomeVideo;
     }
   }
 }

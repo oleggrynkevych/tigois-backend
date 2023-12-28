@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "welcome_videos",
+  "info": {
+    "singularName": "welcome-video",
+    "pluralName": "welcome-videos",
+    "displayName": "WelcomeVideo"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "VideoLarge": {
+      "type": "string"
+    },
+    "VideoSmall": {
+      "type": "string"
+    }
+  }
+}
